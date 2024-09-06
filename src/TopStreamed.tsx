@@ -48,6 +48,7 @@ function valueFormatter(number: number) {
 
 export default function TopStreamed() {
   const [showComparison, setShowComparison] = React.useState(false);
+  setShowComparison(false);
   return (
     <div className="flex flex-row flex-wrap gap-2 justify-center p-6">
       {/* sm:mx-auto sm:max-w-2xl */}
