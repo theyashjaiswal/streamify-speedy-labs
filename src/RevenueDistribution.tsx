@@ -34,8 +34,8 @@ const data = [
   },
 ];
 
-const currencyFormatter = (number: number) =>
-  "$" + Intl.NumberFormat("us").format(number).toString();
+// const currencyFormatter = (number: number) =>
+//   "$" + Intl.NumberFormat("us").format(number).toString();
 
 export default function RevenueDistribution() {
   const [datas, setDatas] = React.useState<TooltipProps | null>(null);

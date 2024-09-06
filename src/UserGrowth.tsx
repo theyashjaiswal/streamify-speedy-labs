@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import { cx } from "../src/lib/utils";
+// import { cx } from "../src/lib/utils";
 
 import { LineChart } from "./components/LineChart";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeaderCell,
-  TableRoot,
-  TableRow,
-} from "../src/components/Table";
+// import {
+//   Table,
+//   TableBody,
+//   TableCell,
+//   TableHead,
+//   TableHeaderCell,
+//   TableRoot,
+//   TableRow,
+// } from "../src/components/Table";
 import { Card } from "./components/Card";
 
 const data = [
@@ -89,30 +89,30 @@ const data = [
   },
 ];
 
-const summary = [
-  {
-    name: "Total Users",
-    value: "$21,349.36",
-    invested: "$19,698.65",
-    cashflow: "$14,033.74",
-    gain: "+$11,012.39",
-    realized: "+$177.48",
-    dividends: "+$490.97",
-    bgColor: "bg-blue-500",
-    changeType: "positive",
-  },
-  {
-    name: "Active Users",
-    value: "$25,943.43",
-    invested: "$23,698.65",
-    cashflow: "$11,033.74",
-    gain: "+$3,012.39",
-    realized: "+$565.41",
-    dividends: "+$290.97",
-    bgColor: "bg-violet-500",
-    changeType: "positive",
-  },
-];
+// const summary = [
+//   {
+//     name: "Total Users",
+//     value: "$21,349.36",
+//     invested: "$19,698.65",
+//     cashflow: "$14,033.74",
+//     gain: "+$11,012.39",
+//     realized: "+$177.48",
+//     dividends: "+$490.97",
+//     bgColor: "bg-blue-500",
+//     changeType: "positive",
+//   },
+//   {
+//     name: "Active Users",
+//     value: "$25,943.43",
+//     invested: "$23,698.65",
+//     cashflow: "$11,033.74",
+//     gain: "+$3,012.39",
+//     realized: "+$565.41",
+//     dividends: "+$290.97",
+//     bgColor: "bg-violet-500",
+//     changeType: "positive",
+//   },
+// ];
 
 const valueFormatter = (number: number) =>
   `${Intl.NumberFormat("us").format(number).toString()}`;

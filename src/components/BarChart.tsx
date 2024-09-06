@@ -25,7 +25,7 @@ import {
   getColorClassName,
   getYAxisDomain,
 } from "../lib/chartUtils";
-// import { useOnWindowResize } from "@/lib/useOnWindowResize";
+import { useOnWindowResize } from "../../src/hooks/useOnWindowResize";
 import { cx } from "../lib/utils";
 //#region Shape
 
@@ -383,11 +383,11 @@ const ChartLegend = (
 ) => {
   const legendRef = React.useRef<HTMLDivElement>(null);
 
-  // useOnWindowResize(() => {
-  //   const calculateHeight = (height: number | undefined) =>
-  //     height ? Number(height) + 15 : 60;
-  //   setLegendHeight(calculateHeight(legendRef.current?.clientHeight));
-  // });
+  useOnWindowResize(() => {
+    const calculateHeight = (height: number | undefined) =>
+      height ? Number(height) + 15 : 60;
+    setLegendHeight(calculateHeight(legendRef.current?.clientHeight));
+  });
 
   const filteredPayload = payload.filter((item: any) => item.type !== "none");
 

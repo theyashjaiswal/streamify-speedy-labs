@@ -6,8 +6,8 @@ import React from "react";
 import { BarChart } from "../src/components/BarChart";
 import { Card } from "../src/components/Card";
 import { Divider } from "../src/components/Divider";
-import { Label } from "../src/components/Label";
-import { Switch } from "../src/components/Switch";
+// import { Label } from "../src/components/Label";
+// import { Switch } from "../src/components/Switch";
 
 const data = [
   {
