@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "tsc -b && vite build",
+    "build": "SKIP_PREFLIGHT_CHECK=true tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
