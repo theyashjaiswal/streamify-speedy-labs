@@ -1,7 +1,7 @@
 // Tremor BarChart [v0.2.1]
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-"use client";
+// "use client";
 
 import React from "react";
 import { RiArrowLeftSLine, RiArrowRightSLine } from "@remixicon/react";

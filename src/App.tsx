@@ -1,6 +1,6 @@
-// import Sidebar from "./Sidebar";
+import { Sidebar } from "./Sidebar";
 import Keymetrics from "./Keymetrics";
-import { Navbar } from "./Navbar";
+// import { Navbar } from "./Navbar";
 import TopStreamed from "./TopStreamed";
 import UserGrowth from "./UserGrowth";
 // import { useState } from "react";
@@ -9,19 +9,18 @@ function App() {
   // const [showSidebar, onSetShowSidebar] = useState(false);
 
   return (
-    <div className="bg-gradient-to-r from-slate-900 to-indigo-900 overflow-clip p-2">
-      <div className="flex justify-center gap-2 ">
-        <Navbar />
-        {/* <Sidebar
-          onSidebarHide={() => {
-            onSetShowSidebar(false);
-          }}
-          showSidebar={showSidebar}
-        /> */}
-        <div className="w-full mt-20">
+    <div className="bg-gray-950 overflow-y-hidden">
+      <div className="mx-auto max-w-screen-2xl">
+        {/* <Navbar /> */}
+        <Sidebar />
+        {/* // onSidebarHide={() => {
+        //   onSetShowSidebar(false);
+        // }}
+        // showSidebar={showSidebar} */}
+        <div className="lg:pl-96 mt-[4rem] lg:mt-6">
           <h1
             id="current-billing-cycle"
-            className="pl-6 scroll-mt-10 text-lg font-semibold text-gray-900 sm:text-xl dark:text-gray-50"
+            className="pl-6 scroll-mt-10 p-2 text-lg font-semibold text-gray-900 sm:text-xl dark:text-gray-50"
           >
             Overview
           </h1>
