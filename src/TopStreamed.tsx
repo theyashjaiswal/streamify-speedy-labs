@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // 'use client';
 
-import React from "react";
-
 import { BarChart } from "../src/components/BarChart";
 import { Card } from "../src/components/Card";
 import { Divider } from "../src/components/Divider";
