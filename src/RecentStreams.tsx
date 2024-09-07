@@ -41,47 +41,59 @@ import {
 } from "./components/ui/table";
 import { Card } from "./components/ui/card";
 
-const data: Payment[] = [
+const data: Stream[] = [
   {
     id: "m5gr84i9",
     amount: 316,
     status: "success",
     email: "ken99@yahoo.com",
+    songName: "ss",
+    artist: "xyz",
   },
   {
     id: "3u1reuv4",
     amount: 242,
     status: "success",
     email: "Abe45@gmail.com",
+    songName: "ss",
+    artist: "xyz",
   },
   {
     id: "derv1ws0",
     amount: 837,
     status: "processing",
     email: "Monserrat44@gmail.com",
+    songName: "ss",
+    artist: "xyz",
   },
   {
     id: "5kma53ae",
     amount: 874,
     status: "success",
     email: "Silas22@gmail.com",
+    songName: "ss",
+    artist: "xyz",
   },
   {
     id: "bhqecj4p",
     amount: 721,
     status: "failed",
     email: "carmella@hotmail.com",
+    songName: "ss",
+    artist: "xyz",
   },
 ];
 
-export type Payment = {
+export type Stream = {
   id: string;
   amount: number;
   status: "pending" | "processing" | "success" | "failed";
   email: string;
+  songName: string;
+  artist?: string;
 };
 
-export const columns: ColumnDef<Payment>[] = [
+export const columns: ColumnDef<Stream>[] = [
   {
     id: "select",
     header: ({ table }) => (
@@ -108,14 +120,14 @@ export const columns: ColumnDef<Payment>[] = [
     accessorKey: "songName",
     header: "Song Name",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("status")}</div>
+      <div className="capitalize">{row.getValue("songName")}</div>
     ),
   },
   {
     accessorKey: "artist",
     header: "Artist",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("status")}</div>
+      <div className="capitalize">{row.getValue("artist")}</div>
     ),
   },
   {
@@ -182,11 +194,10 @@ export const columns: ColumnDef<Payment>[] = [
             <DropdownMenuItem
               onClick={() => navigator.clipboard.writeText(payment.id)}
             >
-              Copy payment ID
+              Copy stream ID
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
+            <DropdownMenuItem>View stream details</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );
