@@ -47,6 +47,7 @@ export const Sidebar = () => {
   return (
     <>
       {/* sidebar (lg+) */}
+      {/* <nav className="hidden lg:block fixed h-screen flex-none border-r bg-card transition-[width] duration-500 w-72 text-black/80 dark:text-white"> */}
       <nav className="hidden h-full overflow-hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col text-black/80 dark:text-white">
         <aside className="flex grow flex-col gap-y-6 overflow-y-auto border-r border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-950">
           <WorkspacesDropdownDesktop />
@@ -103,9 +104,7 @@ export const Sidebar = () => {
               </ul>
             </div>
           </nav>
-          <div className="mt-auto">
-            <UserProfileDesktop />
-          </div>
+          <div className="mt-auto">{/* <UserProfileDesktop /> */}</div>
         </aside>
       </nav>
       {/* top navbar (xs-lg) */}

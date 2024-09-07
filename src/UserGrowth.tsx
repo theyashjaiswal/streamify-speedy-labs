@@ -119,7 +119,7 @@ const valueFormatter = (number: number) =>
 
 export default function UserGrowth() {
   return (
-    <section className="flex flex-row flex-wrap gap-2 justify-center p-6">
+    <section className="rounded-xl border bg-card text-card-foreground shadow h-fit col-span-4 md:col-span-3">
       {" "}
       <Card className="">
         <h3 className="text-sm text-gray-500 dark:text-gray-500">

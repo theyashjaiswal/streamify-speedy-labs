@@ -56,7 +56,7 @@ export default function RevenueDistribution() {
       );
 
   return (
-    <section className="p-6">
+    <section className="h-fit rounded-xl border bg-card text-card-foreground shadow col-span-4 ">
       <Card className="">
         <h3 className="text-sm font-medium text-gray-900 dark:text-gray-50">
           Revenue Distribution

@@ -50,9 +50,12 @@ const data = [
 export default function Keymetrics() {
   return (
     <>
-      <dl className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 p-6">
+      <dl className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 p-6">
         {data.map((item) => (
-          <Card key={item.name} className="w-full xl:max-w-80">
+          <Card
+            key={item.name}
+            className=" rounded-xl border bg-card text-card-foreground shadow w-full xl:max-w-80"
+          >
             {item.cardType == "Avatar" ? (
               <div className="flex justify-between">
                 <div>

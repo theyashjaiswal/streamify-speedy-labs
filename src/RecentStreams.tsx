@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from "react";
 import {
@@ -295,7 +296,7 @@ export function RecentStreams() {
   };
 
   return (
-    <Card className="flex flex-col flex-wrap gap-2 justify-center p-6 m-6 overflow-scroll">
+    <Card className="h-fit col-span-4 p-6  overflow-scroll">
       <h3 className="font-semibold text-gray-900 dark:text-gray-50">
         Recent Streams
       </h3>
