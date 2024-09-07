@@ -16,7 +16,7 @@ import {
   WorkspacesDropdownDesktop,
   WorkspacesDropdownMobile,
 } from "./SidebarWorkspacesDropdown";
-import { UserProfileDesktop, UserProfileMobile } from "./UserProfile";
+import { UserProfileMobile } from "./UserProfile";
 
 const navigation = [
   { name: "Overview", href: siteConfig.baseLinks.overview, icon: RiHome2Line },
