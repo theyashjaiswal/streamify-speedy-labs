@@ -61,7 +61,7 @@ export const Sidebar = () => {
   return (
     <>
       {/* sidebar (lg+) */}
-      <nav className="hidden h-full overflow-hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-80 lg:flex-col text-white">
+      <nav className="hidden h-full overflow-hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-80 lg:flex-col text-black/80 dark:text-white">
         <aside className="flex grow flex-col gap-y-6 overflow-y-auto border-r border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-950">
           <WorkspacesDropdownDesktop />
           <nav

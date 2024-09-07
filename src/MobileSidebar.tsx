@@ -79,12 +79,12 @@ export default function MobileSidebar() {
         </DrawerTrigger>
         <DrawerContent className="sm:max-w-lg">
           <DrawerHeader>
-            <DrawerTitle>Retail Analytics</DrawerTitle>
+            <DrawerTitle>Streamify - Speedy Labs</DrawerTitle>
           </DrawerHeader>
           <DrawerBody>
             <nav
               aria-label="core mobile navigation links"
-              className="flex flex-1 flex-col space-y-10"
+              className="flex flex-1 flex-col space-y-10 text-white"
             >
               <ul role="list" className="space-y-1.5">
                 {navigation.map((item) => (

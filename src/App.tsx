@@ -5,11 +5,12 @@ import TopStreamed from "./TopStreamed";
 import UserGrowth from "./UserGrowth";
 // import { useState } from "react";
 import RevenueDistribution from "./RevenueDistribution";
+import { RecentStreams } from "./RecentStreams";
 function App() {
   // const [showSidebar, onSetShowSidebar] = useState(false);
 
   return (
-    <div className="bg-gray-950 overflow-y-hidden">
+    <div className="bg-white dark:bg-gray-950 overflow-y-hidden">
       <div className="mx-auto max-w-screen-2xl">
         {/* <Navbar /> */}
         <Sidebar />
@@ -25,9 +26,10 @@ function App() {
             Overview
           </h1>
           <Keymetrics />
+          <RevenueDistribution />
           <UserGrowth />
           <TopStreamed />
-          <RevenueDistribution />
+          <RecentStreams />
         </div>
       </div>
     </div>

@@ -10,28 +10,28 @@ import { Divider } from "../src/components/Divider";
 const data = [
   {
     date: "Jan 23",
-    "Song Name": "Tu Jana Na Piya - King",
-    Streams: 1111122,
+    "Song Name": "Hot line bling - Drake",
+    Streams: 4444444,
   },
   {
     date: "Feb 23",
     "Song Name": "Millionaire - Honey Singh",
-    Streams: 2323334,
+    Streams: 3344444,
   },
   {
     date: "Mar 23",
-    "Song Name": "Machayenge - Emiway Bantai",
-    Streams: 4444444,
+    "Song Name": "Under the Influence - Chris Brown, Drake",
+    Streams: 2244444,
   },
   {
     date: "Apr 23",
-    "Song Name": "Machayenge - Emiway Bantai",
-    Streams: 878787,
+    "Song Name": "Awara - Badshah",
+    Streams: 1878787,
   },
   {
     date: "May 23",
     "Song Name": "Machayenge - Emiway Bantai",
-    Streams: 112122,
+    Streams: 900022,
   },
 ];
 
