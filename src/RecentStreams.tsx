@@ -234,7 +234,7 @@ export function RecentStreams() {
   });
 
   return (
-    <Card className="flex flex-col flex-wrap gap-2 justify-center p-6 m-6">
+    <Card className="flex flex-col flex-wrap gap-2 justify-center p-6 m-6 overflow-scroll">
       <h3 className="font-semibold text-gray-900 dark:text-gray-50">
         Recent Streams
       </h3>
