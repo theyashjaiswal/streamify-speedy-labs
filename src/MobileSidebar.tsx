@@ -60,7 +60,7 @@ export default function MobileSidebar() {
                 <li key={item.name}>
                   <DrawerClose asChild>
                     <a
-                      href={item.href}
+                      // href={item.href}
                       className="text-gray-600 hover:text-gray-900 dark:text-gray-400 hover:dark:text-gray-50 flex items-center gap-x-2.5 rounded-md px-2 py-1.5 text-base font-medium transition hover:bg-gray-100 sm:text-sm hover:dark:bg-gray-900"
                     >
                       <item.icon
@@ -81,7 +81,7 @@ export default function MobileSidebar() {
                 {shortcuts.map((item) => (
                   <li key={item.name}>
                     <a
-                      href={item.href}
+                      // href={item.href}
                       className="text-gray-700 hover:text-gray-900 dark:text-gray-400 hover:dark:text-gray-50 flex items-center gap-x-2.5 rounded-md px-2 py-1.5 font-medium transition hover:bg-gray-100 sm:text-sm hover:dark:bg-gray-900"
                     >
                       <item.icon

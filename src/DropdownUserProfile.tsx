@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // "use client";
 
 import {
@@ -21,6 +22,7 @@ import {
   RiSunLine,
 } from "@remixicon/react";
 import * as React from "react";
+import { useTheme } from "./components/ui/theme-provider";
 
 export type DropdownUserProfileProps = {
   children: React.ReactNode;
@@ -31,6 +33,7 @@ export function DropdownUserProfile({
   children,
   align = "start",
 }: DropdownUserProfileProps) {
+  const { setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
@@ -59,6 +62,7 @@ export function DropdownUserProfile({
                     aria-label="Switch to Light Mode"
                     value="light"
                     iconType="check"
+                    onClick={() => setTheme("light")}
                   >
                     <RiSunLine className="size-4 shrink-0" aria-hidden="true" />
                     Light
@@ -67,6 +71,7 @@ export function DropdownUserProfile({
                     aria-label="Switch to Dark Mode"
                     value="dark"
                     iconType="check"
+                    onClick={() => setTheme("dark")}
                   >
                     <RiMoonLine
                       className="size-4 shrink-0"
@@ -74,7 +79,7 @@ export function DropdownUserProfile({
                     />
                     Dark
                   </DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem
+                  {/* <DropdownMenuRadioItem
                     aria-label="Switch to System Mode"
                     value="system"
                     iconType="check"
@@ -84,7 +89,7 @@ export function DropdownUserProfile({
                       aria-hidden="true"
                     />
                     System
-                  </DropdownMenuRadioItem>
+                  </DropdownMenuRadioItem> */}
                 </DropdownMenuRadioGroup>
               </DropdownMenuSubMenuContent>
             </DropdownMenuSubMenu>
