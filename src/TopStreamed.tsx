@@ -48,7 +48,7 @@ export default function TopStreamed() {
   // const [showComparison, setShowComparison] = React.useState(false);
   // setShowComparison(false);
   return (
-    <div className="h-fit rounded-xl border bg-card text-card-foreground shadow  col-span-4 md:col-span-3">
+    <div className="h-fit rounded-xl border bg-card text-card-foreground shadow col-span-4 lg:col-span-3">
       {/* sm:mx-auto sm:max-w-2xl */}
       <Card>
         <h3 className="font-semibold text-gray-900 dark:text-gray-50">
