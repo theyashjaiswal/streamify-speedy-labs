@@ -19,7 +19,7 @@ function App() {
         //   onSetShowSidebar(false);
         // }}
         // showSidebar={showSidebar} */}
-        <div className="lg:pl-80 mt-[6rem] lg:mt-6">
+        <div className="lg:pl-80 pt-2 sm:pt-20 lg:pt-0 lg:mt-6">
           <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
             {/* <button
               className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 w-9 sm:hidden"
