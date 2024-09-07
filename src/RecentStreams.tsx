@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // "use client";
 
 import * as React from "react";
@@ -46,41 +47,73 @@ const data: Stream[] = [
     id: "m5gr84i9",
     amount: 316,
     status: "success",
-    email: "ken99@yahoo.com",
-    songName: "ss",
-    artist: "xyz",
+    email: "honeysingh@artist.com",
+    songName: "Millionaire",
+    artist: "Yo Yo Honey Singh",
+    dateStreamed: "07-09-2024",
+    streamCount: 550000,
+    albumCover:
+      "https://images.genius.com/5ec85acd8642096857b86ed76f43fb82.1000x1000x1.png",
   },
   {
     id: "3u1reuv4",
     amount: 242,
     status: "success",
-    email: "Abe45@gmail.com",
-    songName: "ss",
-    artist: "xyz",
+    email: "postmalone@artist.com",
+    songName: "I Had Some Help",
+    artist: "Post Malone",
+    dateStreamed: "07-09-2024",
+    streamCount: 450000,
+    albumCover:
+      "https://images.genius.com/47f7c3382c5b12a2874cdaa591ba1316.1000x1000x1.png",
   },
   {
     id: "derv1ws0",
     amount: 837,
     status: "processing",
-    email: "Monserrat44@gmail.com",
-    songName: "ss",
-    artist: "xyz",
+    email: "sabrinacarpenter@artist.com",
+    songName: "Espresso",
+    artist: "Sabrina Carpenter",
+    dateStreamed: "07-09-2024",
+    streamCount: 440000,
+    albumCover:
+      "https://images.genius.com/61dab7bb1303ea2419aa2584308f134a.300x300x1.png",
   },
   {
     id: "5kma53ae",
     amount: 874,
     status: "success",
-    email: "Silas22@gmail.com",
-    songName: "ss",
-    artist: "xyz",
+    email: "kendricklamar@artist.com",
+    songName: "Not Like Us",
+    artist: "Kendrick Lamar",
+    dateStreamed: "07-09-2024",
+    streamCount: 340000,
+    albumCover:
+      "https://images.genius.com/95cfea0187b37c7731e11d54b07d2415.1000x1000x1.png",
   },
   {
     id: "bhqecj4p",
     amount: 721,
     status: "failed",
-    email: "carmella@hotmail.com",
-    songName: "ss",
-    artist: "xyz",
+    email: "charlieputh@artist.com",
+    songName: "We don't talk anymore",
+    artist: "Charlie Puth",
+    dateStreamed: "07-09-2024",
+    streamCount: 220000,
+    albumCover:
+      "https://images.genius.com/78c11a302d3f4f082c2bbd407cd714f9.873x873x1.png",
+  },
+  {
+    id: "bhqecj4p",
+    amount: 721,
+    status: "failed",
+    email: "drake@artist.com",
+    songName: "Started from the bottom - E.",
+    artist: "Drake",
+    dateStreamed: "07-09-2024",
+    streamCount: 210000,
+    albumCover:
+      "https://images.genius.com/4d2f4a3e57d8c8016f8e655a718e3b59.1000x1000x1.png",
   },
 ];
 
@@ -91,6 +124,9 @@ export type Stream = {
   email: string;
   songName: string;
   artist?: string;
+  dateStreamed?: string;
+  streamCount: number;
+  albumCover?: string;
 };
 
 export const columns: ColumnDef<Stream>[] = [
@@ -124,6 +160,13 @@ export const columns: ColumnDef<Stream>[] = [
     ),
   },
   {
+    accessorKey: "albumCover",
+    header: "Album art",
+    cell: (info) => (
+      <img src={info.getValue() as any} alt="product" width="50" height="50" />
+    ),
+  },
+  {
     accessorKey: "artist",
     header: "Artist",
     cell: ({ row }) => (
@@ -147,34 +190,41 @@ export const columns: ColumnDef<Stream>[] = [
   },
   {
     accessorKey: "dateStreamed",
-    header: () => <div className="text-right">Date Streamed</div>,
-    cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("amount"));
-
-      // Format the amount as a dollar amount
-      const formatted = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-      }).format(amount);
-
-      return <div className="text-right font-medium">{formatted}</div>;
-    },
+    header: ({ column }) => (
+      <Button
+        variant="ghost"
+        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+      >
+        Date Streamed
+        <CaretSortIcon className="ml-2 h-4 w-4" />
+      </Button>
+    ),
+    cell: ({ row }) => (
+      <div className="text-right font-medium">
+        {row.getValue("dateStreamed")}
+      </div>
+    ),
+    enableSorting: true,
   },
   {
     accessorKey: "streamCount",
-    header: () => <div className="text-right">Stream Count</div>,
-    cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("amount"));
-
-      // Format the amount as a dollar amount
-      const formatted = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-      }).format(amount);
-
-      return <div className="text-right font-medium">{formatted}</div>;
-    },
+    header: ({ column }) => (
+      <Button
+        variant="ghost"
+        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+      >
+        Stream Count
+        <CaretSortIcon className="ml-2 h-4 w-4" />
+      </Button>
+    ),
+    cell: ({ row }) => (
+      <div className="text-right font-medium">
+        {row.getValue("streamCount")}
+      </div>
+    ),
+    enableSorting: true,
   },
+
   {
     id: "actions",
     enableHiding: false,
@@ -220,7 +270,7 @@ export function RecentStreams() {
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
     getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
+    getPaginationRowModel: getPaginationRowModel(), // Pagination row model
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
@@ -239,14 +289,28 @@ export function RecentStreams() {
         Recent Streams
       </h3>
       <div className="flex items-center py-4">
+        {/* Filter by artist name */}
         <Input
-          placeholder="Filter emails..."
-          value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("email")?.setFilterValue(event.target.value)
-          }
+          placeholder="Filter by artist name ..."
+          value={(table.getColumn("artist")?.getFilterValue() as string) ?? ""}
+          onChange={(event) => {
+            table.getColumn("artist")?.setFilterValue(event.target.value);
+          }}
           className="max-w-sm"
         />
+
+        {/* Filter by song name */}
+        <Input
+          placeholder="Filter by song name ..."
+          value={
+            (table.getColumn("songName")?.getFilterValue() as string) ?? ""
+          }
+          onChange={(event) => {
+            table.getColumn("songName")?.setFilterValue(event.target.value);
+          }}
+          className="max-w-sm ml-4"
+        />
+
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
@@ -324,10 +388,12 @@ export function RecentStreams() {
           </TableBody>
         </Table>
       </div>
-      <div className="flex items-center justify-end space-x-2 py-4">
-        <div className="flex-1 text-sm text-muted-foreground">
-          {table.getFilteredSelectedRowModel().rows.length} of{" "}
-          {table.getFilteredRowModel().rows.length} row(s) selected.
+
+      {/* Pagination controls */}
+      <div className="flex items-center justify-between space-x-2 py-4">
+        <div className="text-sm text-muted-foreground">
+          Page {table.getState().pagination.pageIndex + 1} of{" "}
+          {table.getPageCount()}
         </div>
         <div className="space-x-2">
           <Button
@@ -347,6 +413,46 @@ export function RecentStreams() {
             Next
           </Button>
         </div>
+      </div>
+
+      {/* Page size options */}
+      <div className="flex justify-end space-x-2 py-4">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline" className="ml-auto">
+              Rows per page: {table.getState().pagination.pageSize}
+              <ChevronDownIcon className="ml-2 h-4 w-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            {[5, 10, 20, 50].map((pageSize) => (
+              <DropdownMenuItem
+                key={pageSize}
+                onSelect={() => table.setPageSize(pageSize)} // Handle page size change
+                className={`capitalize ${
+                  table.getState().pagination.pageSize === pageSize
+                    ? "font-bold"
+                    : ""
+                }`}
+              >
+                {pageSize}
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+
+        {/* <select
+          value={table.getState().pagination.pageSize}
+          onChange={(e) => {
+            table.setPageSize(Number(e.target.value));
+          }}
+        >
+          {[5, 10, 20, 50].map((pageSize) => (
+            <option key={pageSize} value={pageSize}>
+              {pageSize}
+            </option>
+          ))}
+        </select> */}
       </div>
     </Card>
   );

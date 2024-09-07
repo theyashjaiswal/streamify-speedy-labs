@@ -84,7 +84,7 @@ export default function MobileSidebar() {
           <DrawerBody>
             <nav
               aria-label="core mobile navigation links"
-              className="flex flex-1 flex-col space-y-10 text-white"
+              className="flex flex-1 flex-col space-y-10 text-black dark:text-white"
             >
               <ul role="list" className="space-y-1.5">
                 {navigation.map((item) => (

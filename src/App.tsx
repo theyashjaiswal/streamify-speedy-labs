@@ -110,7 +110,7 @@ function App() {
                 jf-ext-cache-id="0"
               />
             </div>
-            <button
+            {/* <button
               className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 w-9 overflow-hidden rounded-full"
               type="button"
               id="radix-:Rhipuuuuu6ja:"
@@ -130,7 +130,7 @@ function App() {
                 // srcset="/_next/image?url=%2Fplaceholder-user.jpg&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fplaceholder-user.jpg&amp;w=96&amp;q=75 2x"
                 src="/_next/image?url=%2Fplaceholder-user.jpg&amp;w=96&amp;q=75"
               />
-            </button>
+            </button> */}
           </header>
 
           <h1
