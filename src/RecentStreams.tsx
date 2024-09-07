@@ -134,10 +134,6 @@ export const columns: ColumnDef<Stream>[] = [
     id: "select",
     header: ({ table }) => (
       <Checkbox
-        // checked={
-        //   table.getIsAllPageRowsSelected() ||
-        //   (table.getIsSomePageRowsSelected() && "indeterminate")
-        // }
         onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
         aria-label="Select all"
       />
@@ -154,14 +150,14 @@ export const columns: ColumnDef<Stream>[] = [
   },
   {
     accessorKey: "songName",
-    header: "Song Name",
+    header: "Song",
     cell: ({ row }) => (
       <div className="capitalize">{row.getValue("songName")}</div>
     ),
   },
   {
     accessorKey: "albumCover",
-    header: "Album art",
+    header: "Album cover",
     cell: (info) => (
       <img src={info.getValue() as any} alt="product" width="50" height="50" />
     ),
@@ -263,6 +259,7 @@ export function RecentStreams() {
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = React.useState({});
+  const [searchTerm, setSearchTerm] = React.useState("");
 
   const table = useReactTable({
     data,
@@ -283,32 +280,35 @@ export function RecentStreams() {
     },
   });
 
+  // Combined filter logic
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.toLowerCase();
+    setSearchTerm(value);
+
+    table.setColumnFilters([
+      {
+        id: "combinedFilter",
+        value: (row) => {
+          const songName = row.getValue("songName").toLowerCase();
+          const artist = row.getValue("artist")?.toLowerCase() || "";
+          return songName.includes(value) || artist.includes(value);
+        },
+      },
+    ]);
+  };
+
   return (
     <Card className="flex flex-col flex-wrap gap-2 justify-center p-6 m-6 overflow-scroll">
       <h3 className="font-semibold text-gray-900 dark:text-gray-50">
         Recent Streams
       </h3>
       <div className="flex items-center py-4">
-        {/* Filter by artist name */}
+        {/* Combined filter input */}
         <Input
-          placeholder="Filter by artist name ..."
-          value={(table.getColumn("artist")?.getFilterValue() as string) ?? ""}
-          onChange={(event) => {
-            table.getColumn("artist")?.setFilterValue(event.target.value);
-          }}
+          placeholder="Filter by artist or song name..."
+          value={searchTerm}
+          onChange={handleSearchChange}
           className="max-w-sm"
-        />
-
-        {/* Filter by song name */}
-        <Input
-          placeholder="Filter by song name ..."
-          value={
-            (table.getColumn("songName")?.getFilterValue() as string) ?? ""
-          }
-          onChange={(event) => {
-            table.getColumn("songName")?.setFilterValue(event.target.value);
-          }}
-          className="max-w-sm ml-4"
         />
 
         <DropdownMenu>
@@ -321,20 +321,16 @@ export function RecentStreams() {
             {table
               .getAllColumns()
               .filter((column) => column.getCanHide())
-              .map((column) => {
-                return (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    className="capitalize"
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
-                      column.toggleVisibility(!!value)
-                    }
-                  >
-                    {column.id}
-                  </DropdownMenuCheckboxItem>
-                );
-              })}
+              .map((column) => (
+                <DropdownMenuCheckboxItem
+                  key={column.id}
+                  className="capitalize"
+                  checked={column.getIsVisible()}
+                  onCheckedChange={(value) => column.toggleVisibility(!!value)}
+                >
+                  {column.id}
+                </DropdownMenuCheckboxItem>
+              ))}
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
@@ -343,18 +339,16 @@ export function RecentStreams() {
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map((header) => {
-                  return (
-                    <TableHead key={header.id}>
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
-                    </TableHead>
-                  );
-                })}
+                {headerGroup.headers.map((header) => (
+                  <TableHead key={header.id}>
+                    {header.isPlaceholder
+                      ? null
+                      : flexRender(
+                          header.column.columnDef.header,
+                          header.getContext()
+                        )}
+                  </TableHead>
+                ))}
               </TableRow>
             ))}
           </TableHeader>
@@ -440,19 +434,6 @@ export function RecentStreams() {
             ))}
           </DropdownMenuContent>
         </DropdownMenu>
-
-        {/* <select
-          value={table.getState().pagination.pageSize}
-          onChange={(e) => {
-            table.setPageSize(Number(e.target.value));
-          }}
-        >
-          {[5, 10, 20, 50].map((pageSize) => (
-            <option key={pageSize} value={pageSize}>
-              {pageSize}
-            </option>
-          ))}
-        </select> */}
       </div>
     </Card>
   );

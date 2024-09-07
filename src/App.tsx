@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Sidebar } from "./Sidebar";
 import Keymetrics from "./Keymetrics";
 // import { Navbar } from "./Navbar";
@@ -6,9 +7,9 @@ import UserGrowth from "./UserGrowth";
 // import { useState } from "react";
 import RevenueDistribution from "./RevenueDistribution";
 import { RecentStreams } from "./RecentStreams";
+
 function App() {
   // const [showSidebar, onSetShowSidebar] = useState(false);
-
   return (
     <div className="bg-white dark:bg-gray-950 overflow-y-hidden">
       <div className="mx-auto max-w-screen-2xl">
@@ -18,9 +19,9 @@ function App() {
         //   onSetShowSidebar(false);
         // }}
         // showSidebar={showSidebar} */}
-        <div className="lg:pl-96 mt-[4rem] lg:mt-6">
+        <div className="lg:pl-80 mt-[6rem] lg:mt-6">
           <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
-            <button
+            {/* <button
               className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 w-9 sm:hidden"
               type="button"
               aria-haspopup="dialog"
@@ -44,7 +45,7 @@ function App() {
                 <path d="M9 3v18"></path>
               </svg>
               <span className="sr-only">Toggle Menu</span>
-            </button>
+            </button> */}
             <nav aria-label="breadcrumb" className="hidden md:flex">
               <ol className="flex flex-wrap items-center gap-1.5 break-words text-sm text-muted-foreground sm:gap-2.5">
                 <li className="inline-flex items-center gap-1.5">
@@ -87,7 +88,7 @@ function App() {
                 </li>
               </ol>
             </nav>
-            <div className="relative ml-auto flex-1 md:grow-0">
+            <div className="hidden lg:block relative ml-auto flex-1 md:grow-0">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
