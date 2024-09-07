@@ -26,14 +26,14 @@ const data = [
   },
   {
     name: "Total streams",
-    stat: "50Bhours",
+    stat: "50B Hours",
     change: "+19.7%",
     changeType: "positive",
     cardType: "NoAvatar",
   },
   {
     name: "Revenue",
-    stat: "80B$(CA)",
+    stat: "80B $",
     change: "+33.7%",
     changeType: "positive",
     cardType: "NoAvatar",
@@ -50,7 +50,7 @@ const data = [
 export default function Keymetrics() {
   return (
     <>
-      <dl className="flex flex-col xl:flex-row  md:flex-nowrap  lg:flex-wrap gap-4 items-center p-6 pt-2">
+      <dl className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 p-6">
         {data.map((item) => (
           <Card key={item.name} className="w-full xl:max-w-80">
             {item.cardType == "Avatar" ? (
@@ -92,9 +92,9 @@ export default function Keymetrics() {
                   <span
                     className={cx(
                       item.changeType === "positive"
-                        ? "text-emerald-700 dark:text-emerald-500"
-                        : "text-red-700 dark:text-red-500",
-                      "text-sm font-medium"
+                        ? "bg-emerald-100 text-emerald-800 ring-emerald-600/10 dark:bg-emerald-400/10 dark:text-emerald-500 dark:ring-emerald-400/20"
+                        : "bg-red-100 text-red-800 ring-red-600/10 dark:bg-red-400/10 dark:text-red-500 dark:ring-red-400/20",
+                      "inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset"
                     )}
                   >
                     {item.change}

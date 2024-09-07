@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-// "use client";
-
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from "react";
 import {
   CaretSortIcon,
@@ -261,13 +259,25 @@ export function RecentStreams() {
   const [rowSelection, setRowSelection] = React.useState({});
   const [searchTerm, setSearchTerm] = React.useState("");
 
+  // Filtered data based on search term
+  const filteredData = React.useMemo(() => {
+    return data.filter((row) => {
+      const songName = row.songName?.toLowerCase() || "";
+      const artist = row.artist?.toLowerCase() || "";
+      return (
+        songName.includes(searchTerm.toLowerCase()) ||
+        artist.includes(searchTerm.toLowerCase())
+      );
+    });
+  }, [searchTerm]);
+
   const table = useReactTable({
-    data,
+    data: filteredData,
     columns,
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
     getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: getPaginationRowModel(), // Pagination row model
+    getPaginationRowModel: getPaginationRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
@@ -280,21 +290,8 @@ export function RecentStreams() {
     },
   });
 
-  // Combined filter logic
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.toLowerCase();
-    setSearchTerm(value);
-
-    table.setColumnFilters([
-      {
-        id: "combinedFilter",
-        value: (row) => {
-          const songName = row.getValue("songName").toLowerCase();
-          const artist = row.getValue("artist")?.toLowerCase() || "";
-          return songName.includes(value) || artist.includes(value);
-        },
-      },
-    ]);
+    setSearchTerm(e.target.value);
   };
 
   return (
