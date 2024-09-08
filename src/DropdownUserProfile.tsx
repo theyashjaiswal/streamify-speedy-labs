@@ -79,17 +79,18 @@ export function DropdownUserProfile({
                     />
                     Dark
                   </DropdownMenuRadioItem>
-                  {/* <DropdownMenuRadioItem
+                  <DropdownMenuRadioItem
                     aria-label="Switch to System Mode"
                     value="system"
                     iconType="check"
+                    onClick={() => setTheme("system")}
                   >
                     <RiComputerLine
                       className="size-4 shrink-0"
                       aria-hidden="true"
                     />
                     System
-                  </DropdownMenuRadioItem> */}
+                  </DropdownMenuRadioItem>
                 </DropdownMenuRadioGroup>
               </DropdownMenuSubMenuContent>
             </DropdownMenuSubMenu>
