@@ -1,20 +1,19 @@
 # Streamify Dashboard - SpeedyBrand
 
 - **Hosted Link** - [https://streamify-speedy-labs.vercel.app/](https://streamify-speedy-labs.vercel.app/)
-- Desktop : <img width="1792" alt="Screenshot 2024-09-09 at 5 46 03 PM" src="https://github.com/user-attachments/assets/adce7c56-bc99-4e59-84c8-a515cde44b28">
+- Desktop : 
+- <img width="1792" alt="Screenshot 2024-09-09 at 7 44 37 PM" src="https://github.com/user-attachments/assets/1cbd2001-1fa7-4ae8-91a6-64e685cac3fb">
+- <img width="1792" alt="Screenshot 2024-09-09 at 7 44 32 PM" src="https://github.com/user-attachments/assets/4b1e395f-f983-4d50-bc15-3275198eea3b">
 
 ## Thought Process
-
 The primary objective of this project was to build an analytics dashboard for a fictional music streaming service, "Streamify," that provides key insights into user activity, revenue generation, and content performance. My approach focused on creating a user-friendly, responsive, and visually appealing dashboard using modern web technologies.
 
 ### Key factors I considered:
-
 - **UI/UX**: The design should be clean, minimal, and adaptable to various screen sizes. Usability and clarity were top priorities.
 - **Performance**: Optimizing load times and avoiding unnecessary re-renders were crucial. I implemented lazy loading and code-splitting techniques to improve performance.
 - **Interactivity**: I incorporated interactive charts and tables that enable the user to hover over data points for detailed insights and perform sorting and filtering operations.
 
 ### Additional Considerations:
-
 - **Mocked Data**: To simulate real-time analytics, I created realistic mock data for user activity, revenue breakdown, and song streaming history.
 - **Chart Interactions**: Users can interact with the charts, hover to see details, and filter the data based on selections.
 
@@ -65,7 +64,6 @@ You can deploy this app using services like Vercel or Netlify by connecting your
 This is a single-page application (SPA) that includes the following sections:
 
 **Key Metrics:**
-
 - Total Users
 - Active Users
 - Total Streams
@@ -73,17 +71,14 @@ This is a single-page application (SPA) that includes the following sections:
 - Top Artist
 
 **Data Visualization:**
-
 - User Growth Chart (line chart)
 - Revenue Distribution (pie chart)
 - Top 5 Streamed Songs (bar chart)
 
 **Data Table:**
-
 - List of recent streams with columns for Song Name, Artist, Date Streamed, Stream Count, and User ID.
 
 **User Interaction Features:**
-
 - Sorting & Filtering: The data table allows sorting by Date or Stream Count and filtering by Artist or Song Name.
 - Chart Interactions: Hovering over points in the charts displays exact numbers, and clicking on revenue sources filters the data table.
 
@@ -92,7 +87,6 @@ This is a single-page application (SPA) that includes the following sections:
 - Optimized Performance: Implemented lazy loading and code splitting to improve load times and minimize re-renders.
 
 ## Screenshots
-
 - Mobile/iPhone:
   - <img src="https://github.com/user-attachments/assets/f9e41d8e-5a53-460f-90a6-6b8207e9339c" alt="mobileScreenshot1" width="600"/>
   - <img src="https://github.com/user-attachments/assets/090b0c5c-9323-4c04-8b71-eb9f2e361c51" alt="mobileScreenshot2" width="600"/>
