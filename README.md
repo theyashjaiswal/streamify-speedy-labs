@@ -30,13 +30,11 @@ The primary objective of this project was to build an analytics dashboard for a 
 2. **Install dependencies:**
 
    ```bash
-   Copy code
    npm install
 
 3. **Run the development server:**
 
    ```bash
-   Copy code
    npm start
 
 4. **View the application in your browser:**
