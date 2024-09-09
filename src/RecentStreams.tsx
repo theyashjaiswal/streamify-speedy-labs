@@ -195,7 +195,7 @@ export const columns: ColumnDef<Stream>[] = [
       </Button>
     ),
     cell: ({ row }) => (
-      <div className="text-right font-medium">
+      <div className="text-center font-medium">
         {row.getValue("dateStreamed")}
       </div>
     ),
@@ -213,7 +213,7 @@ export const columns: ColumnDef<Stream>[] = [
       </Button>
     ),
     cell: ({ row }) => (
-      <div className="text-right font-medium">
+      <div className="text-center font-medium">
         {row.getValue("streamCount")}
       </div>
     ),
@@ -300,13 +300,13 @@ export function RecentStreams() {
       <h3 className="font-semibold text-gray-900 dark:text-gray-50">
         Recent Streams
       </h3>
-      <div className="flex items-center py-4">
+      <div className="flex items-center py-4 ">
         {/* Combined filter input */}
         <Input
           placeholder="Filter by artist or song name..."
           value={searchTerm}
           onChange={handleSearchChange}
-          className="max-w-sm"
+          className="max-w-sm mr-8"
         />
 
         <DropdownMenu>
