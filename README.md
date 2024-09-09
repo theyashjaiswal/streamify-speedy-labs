@@ -60,3 +60,36 @@ You can deploy this app using services like Vercel or Netlify by connecting your
 
 - React Context API - For state management to manage global state across the dashboard.
 [React Context API Documentation](https://reactjs.org/docs/context.html)
+
+
+## Building a Music Streaming Analytics Dashboard
+
+**Dashboard Overview:**
+This is a single-page application (SPA) that includes the following sections:
+
+**Key Metrics:**
+
+- Total Users
+- Active Users
+- Total Streams
+- Revenue
+- Top Artist
+
+**Data Visualization:**
+
+- User Growth Chart (line chart)
+- Revenue Distribution (pie chart)
+- Top 5 Streamed Songs (bar chart)
+
+**Data Table:**
+
+- List of recent streams with columns for Song Name, Artist, Date Streamed, Stream Count, and User ID.
+
+**User Interaction Features:**
+
+- Sorting & Filtering: The data table allows sorting by Date or Stream Count and filtering by Artist or Song Name.
+- Chart Interactions: Hovering over points in the charts displays exact numbers, and clicking on revenue sources filters the data table.
+
+**Bonus Features:**
+- Responsive Design: The dashboard is fully responsive and adapts well to different screen sizes.
+- Optimized Performance: Implemented lazy loading and code splitting to improve load times and minimize re-renders.
