@@ -191,8 +191,8 @@ function App() {
           </h1>
           <Keymetrics />
           <section className="relative grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-7 p-6 ">
-            <RevenueDistribution />
             <UserGrowth />
+            <RevenueDistribution />
             <RecentStreams />
             <TopStreamed />
           </section>
