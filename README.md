@@ -3,7 +3,7 @@
 - **Hosted Link** - [https://streamify-speedy-labs.vercel.app/](https://streamify-speedy-labs.vercel.app/)
 - Desktop : 
 - <img width="1792" alt="Screenshot 2024-09-09 at 7 44 37 PM" src="https://github.com/user-attachments/assets/1cbd2001-1fa7-4ae8-91a6-64e685cac3fb">
-- <img width="1792" alt="Screenshot 2024-09-09 at 7 44 32 PM" src="https://github.com/user-attachments/assets/4b1e395f-f983-4d50-bc15-3275198eea3b">
+- <img width="1792" alt="Screenshot 2024-09-09 at 7 48 49 PM" src="https://github.com/user-attachments/assets/8936b049-0112-46ca-8cc6-db6e07824f39">
 
 ## Thought Process
 The primary objective of this project was to build an analytics dashboard for a fictional music streaming service, "Streamify," that provides key insights into user activity, revenue generation, and content performance. My approach focused on creating a user-friendly, responsive, and visually appealing dashboard using modern web technologies.
