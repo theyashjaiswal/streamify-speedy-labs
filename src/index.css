@@ -67,5 +67,11 @@
 .bg-card,
 .bg-background,
 .bg-popover {
+  background-color: white;
+}
+
+.dark .bg-card,
+.dark .bg-background,
+.dark .bg-popover {
   background-color: rgb(9 14 26 / var(--tw-bg-opacity));
 }
