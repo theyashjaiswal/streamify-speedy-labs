@@ -1,7 +1,12 @@
 # Streamify Dashboard - SpeedyBrand
 
 - **Hosted Link** - [https://streamify-speedy-labs.vercel.app/](https://streamify-speedy-labs.vercel.app/)
-<img width="1792" alt="Screenshot 2024-09-09 at 5 46 03 PM" src="https://github.com/user-attachments/assets/adce7c56-bc99-4e59-84c8-a515cde44b28">
+- Desktop : <img width="1792" alt="Screenshot 2024-09-09 at 5 46 03 PM" src="https://github.com/user-attachments/assets/adce7c56-bc99-4e59-84c8-a515cde44b28">
+- Tablet: ![IMG_7030](https://github.com/user-attachments/assets/f9e41d8e-5a53-460f-90a6-6b8207e9339c)
+![IMG_7031](https://github.com/user-attachments/assets/090b0c5c-9323-4c04-8b71-eb9f2e361c51)
+- Mobile: 
+
+
 
 
 ## Thought Process
