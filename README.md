@@ -2,12 +2,6 @@
 
 - **Hosted Link** - [https://streamify-speedy-labs.vercel.app/](https://streamify-speedy-labs.vercel.app/)
 - Desktop : <img width="1792" alt="Screenshot 2024-09-09 at 5 46 03 PM" src="https://github.com/user-attachments/assets/adce7c56-bc99-4e59-84c8-a515cde44b28">
-- Tablet: ![IMG_7030](https://github.com/user-attachments/assets/f9e41d8e-5a53-460f-90a6-6b8207e9339c)
-![IMG_7031](https://github.com/user-attachments/assets/090b0c5c-9323-4c04-8b71-eb9f2e361c51)
-- Mobile: 
-
-
-
 
 ## Thought Process
 
@@ -96,3 +90,11 @@ This is a single-page application (SPA) that includes the following sections:
 **Bonus Features:**
 - Responsive Design: The dashboard is fully responsive and adapts well to different screen sizes.
 - Optimized Performance: Implemented lazy loading and code splitting to improve load times and minimize re-renders.
+
+## Screenshots
+
+- Mobile/iPhone: ![IMG_7030](https://github.com/user-attachments/assets/f9e41d8e-5a53-460f-90a6-6b8207e9339c)
+![IMG_7031](https://github.com/user-attachments/assets/090b0c5c-9323-4c04-8b71-eb9f2e361c51)
+- Tablet/iPad: 
+![IMG_F1D2EDB28C68-1](https://github.com/user-attachments/assets/1dcf9746-40ef-448e-a39d-9d20ea7bbd46)
+
