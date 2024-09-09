@@ -94,8 +94,8 @@ This is a single-page application (SPA) that includes the following sections:
 ## Screenshots
 
 - Mobile/iPhone:
-<img src="https://github.com/user-attachments/assets/f9e41d8e-5a53-460f-90a6-6b8207e9339c" alt="mobileScreenshot1" width="600"/>
-<img src="https://github.com/user-attachments/assets/090b0c5c-9323-4c04-8b71-eb9f2e361c51" alt="mobileScreenshot2" width="600"/>
+   <img src="https://github.com/user-attachments/assets/f9e41d8e-5a53-460f-90a6-6b8207e9339c" alt="mobileScreenshot1" width="600"/>
+   <img src="https://github.com/user-attachments/assets/090b0c5c-9323-4c04-8b71-eb9f2e361c51" alt="mobileScreenshot2" width="600"/>
 
 - Tablet/iPad: 
 ![IMG_F1D2EDB28C68-1](https://github.com/user-attachments/assets/1dcf9746-40ef-448e-a39d-9d20ea7bbd46)
