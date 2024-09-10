@@ -12,23 +12,23 @@ import { Card } from "../src/components/Card";
 const data = [
   {
     name: "Total Users",
-    stat: "10,450",
-    change: "-12.5%",
-    changeType: "negative",
+    stat: "100.3M",
+    change: "+99.7%",
+    changeType: "positive",
     cardType: "NoAvatar",
   },
   {
     name: "Active Users",
-    stat: "56.1%",
-    change: "+1.8%",
+    stat: "16.3%",
+    change: "+32.4K%",
     changeType: "positive",
     cardType: "NoAvatar",
   },
   {
     name: "Total streams",
     stat: "50B Hours",
-    change: "+19.7%",
-    changeType: "positive",
+    change: "-5.7%",
+    changeType: "negative",
     cardType: "NoAvatar",
   },
   {

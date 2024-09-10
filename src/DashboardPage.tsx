@@ -74,7 +74,7 @@ const DashboardPage = () => {
                   ></path>
                 </svg>
               </li>
-              <li className="inline-flex items-center gap-1.5">
+              <li className="inline-flex items-center gap-1.5 font-extrabold">
                 <span
                   role="link"
                   aria-disabled="true"
@@ -177,10 +177,7 @@ const DashboardPage = () => {
         </button> */}
         </header>
 
-        <h1
-          id="current-billing-cycle"
-          className="pl-6 scroll-mt-10 p-2 text-lg font-semibold text-gray-900 sm:text-xl dark:text-gray-50"
-        >
+        <h1 className="pl-6 scroll-mt-10 p-2 text-3xl font-semibold text-gray-900 dark:text-gray-50 pb-0 ">
           Overview
         </h1>
         <Keymetrics />

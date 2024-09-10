@@ -122,10 +122,10 @@ export default function UserGrowth() {
     <section className="rounded-xl border bg-card text-card-foreground shadow h-fit col-span-4">
       {" "}
       <Card className="">
-        <h3 className="text-sm text-gray-500 dark:text-gray-500">
+        <h3 className="text-sm font-medium text-gray-900 dark:text-gray-50">
           User Growth
         </h3>
-        <p className="mt-1 text-3xl font-semibold text-gray-900 dark:text-gray-50">
+        <p className="mt-1 text-xl font-semibold text-gray-600 dark:text-gray-50">
           100,332,333
         </p>
         <p className="mt-1 text-sm font-medium">
