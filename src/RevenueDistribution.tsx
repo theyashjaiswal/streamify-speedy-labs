@@ -135,7 +135,7 @@ export default function RevenueDistribution() {
             id="revenueByYear"
             value={selectedYear}
             onChange={handleYearChange}
-            className="mt-2 p-2 border rounded"
+            className="my-2 p-2 border rounded font-semibold"
           >
             {Object.keys(revenueData).map((year) => (
               <option key={year} value={year}>
