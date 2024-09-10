@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from "react";
@@ -40,6 +41,7 @@ import {
   TableRow,
 } from "./components/ui/table";
 import { Card } from "./components/ui/card";
+import { useToast } from "./hooks/use-toast";
 
 const data: Stream[] = [
   {
@@ -127,128 +129,148 @@ export type Stream = {
   streamCount: number;
   albumCover?: string;
 };
+// let copiedStreamId = false;
 
-export const columns: ColumnDef<Stream>[] = [
-  {
-    id: "select",
-    header: ({ table }) => (
-      <Checkbox
-        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-        aria-label="Select all"
-      />
-    ),
-    cell: ({ row }) => (
-      <Checkbox
-        checked={row.getIsSelected()}
-        onCheckedChange={(value) => row.toggleSelected(!!value)}
-        aria-label="Select row"
-      />
-    ),
-    enableSorting: false,
-    enableHiding: false,
-  },
-  {
-    accessorKey: "songName",
-    header: "Song",
-    cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("songName")}</div>
-    ),
-  },
-  {
-    accessorKey: "albumCover",
-    header: "Album cover",
-    cell: (info) => (
-      <img src={info.getValue() as any} alt="product" width="50" height="50" />
-    ),
-  },
-  {
-    accessorKey: "artist",
-    header: "Artist",
-    cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("artist")}</div>
-    ),
-  },
-  {
-    accessorKey: "email",
-    header: ({ column }) => {
-      return (
+export function getColumns(
+  toast: (options: { title: string; description?: string }) => void
+): ColumnDef<Stream>[] {
+  return [
+    {
+      id: "select",
+      header: ({ table }) => (
+        <Checkbox
+          onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+          aria-label="Select all"
+        />
+      ),
+      cell: ({ row }) => (
+        <Checkbox
+          checked={row.getIsSelected()}
+          onCheckedChange={(value) => row.toggleSelected(!!value)}
+          aria-label="Select row"
+        />
+      ),
+      enableSorting: false,
+      enableHiding: false,
+    },
+    {
+      accessorKey: "songName",
+      header: "Song",
+      cell: ({ row }) => (
+        <div className="capitalize">{row.getValue("songName")}</div>
+      ),
+    },
+    {
+      accessorKey: "albumCover",
+      header: "Album cover",
+      cell: (info) => (
+        <img
+          src={info.getValue() as any}
+          alt="product"
+          width="50"
+          height="50"
+        />
+      ),
+    },
+    {
+      accessorKey: "artist",
+      header: "Artist",
+      cell: ({ row }) => (
+        <div className="capitalize">{row.getValue("artist")}</div>
+      ),
+    },
+    {
+      accessorKey: "email",
+      header: ({ column }) => {
+        return (
+          <Button
+            variant="ghost"
+            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          >
+            User ID
+            <CaretSortIcon className="ml-2 h-4 w-4" />
+          </Button>
+        );
+      },
+      cell: ({ row }) => (
+        <div className="lowercase">{row.getValue("email")}</div>
+      ),
+    },
+    {
+      accessorKey: "dateStreamed",
+      header: ({ column }) => (
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          User ID
+          Date Streamed
           <CaretSortIcon className="ml-2 h-4 w-4" />
         </Button>
-      );
+      ),
+      cell: ({ row }) => (
+        <div className="text-center font-medium">
+          {row.getValue("dateStreamed")}
+        </div>
+      ),
+      enableSorting: true,
     },
-    cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
-  },
-  {
-    accessorKey: "dateStreamed",
-    header: ({ column }) => (
-      <Button
-        variant="ghost"
-        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-      >
-        Date Streamed
-        <CaretSortIcon className="ml-2 h-4 w-4" />
-      </Button>
-    ),
-    cell: ({ row }) => (
-      <div className="text-center font-medium">
-        {row.getValue("dateStreamed")}
-      </div>
-    ),
-    enableSorting: true,
-  },
-  {
-    accessorKey: "streamCount",
-    header: ({ column }) => (
-      <Button
-        variant="ghost"
-        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-      >
-        Stream Count
-        <CaretSortIcon className="ml-2 h-4 w-4" />
-      </Button>
-    ),
-    cell: ({ row }) => (
-      <div className="text-center font-medium">
-        {row.getValue("streamCount")}
-      </div>
-    ),
-    enableSorting: true,
-  },
-
-  {
-    id: "actions",
-    enableHiding: false,
-    cell: ({ row }) => {
-      const payment = row.original;
-
-      return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0">
-              <span className="sr-only">Open menu</span>
-              <DotsHorizontalIcon className="h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
-            >
-              Copy stream ID
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>View stream details</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      );
+    {
+      accessorKey: "streamCount",
+      header: ({ column }) => (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Stream Count
+          <CaretSortIcon className="ml-2 h-4 w-4" />
+        </Button>
+      ),
+      cell: ({ row }) => (
+        <div className="text-center font-medium">
+          {row.getValue("streamCount")}
+        </div>
+      ),
+      enableSorting: true,
     },
-  },
-];
+
+    {
+      id: "actions",
+      enableHiding: false,
+      cell: ({ row }) => {
+        const payment = row.original;
+
+        return (
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" className="h-8 w-8 p-0">
+                <span className="sr-only">Open menu</span>
+                <DotsHorizontalIcon className="h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuLabel>Actions</DropdownMenuLabel>
+              <DropdownMenuItem
+                onClick={() => {
+                  navigator.clipboard.writeText(payment.id);
+                  toast({
+                    title: "Stream ID Copied",
+                    description:
+                      "The Stream ID has been copied to your clipboard.",
+                  });
+                }}
+              >
+                Copy stream ID
+                <span className="sr-only">Copy</span>
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>View stream details</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        );
+      },
+    },
+  ];
+}
 
 export function RecentStreams() {
   const [sorting, setSorting] = React.useState<SortingState>([]);
@@ -259,6 +281,7 @@ export function RecentStreams() {
     React.useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = React.useState({});
   const [searchTerm, setSearchTerm] = React.useState("");
+  const { toast } = useToast();
 
   // Filtered data based on search term
   const filteredData = React.useMemo(() => {
@@ -274,7 +297,7 @@ export function RecentStreams() {
 
   const table = useReactTable({
     data: filteredData,
-    columns,
+    columns: getColumns(toast),
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
     getCoreRowModel: getCoreRowModel(),
@@ -390,7 +413,7 @@ export function RecentStreams() {
             ) : (
               <TableRow>
                 <TableCell
-                  colSpan={columns.length}
+                  colSpan={getColumns(toast).length}
                   className="h-24 text-center"
                 >
                   No results.

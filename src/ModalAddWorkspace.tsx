@@ -1,5 +1,6 @@
+/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
-import { Badge } from "../src/components/Badge";
+// import { Badge } from "../src/components/Badge";
 import { Button } from "../src/components/Button";
 import {
   Dialog,
@@ -14,7 +15,7 @@ import {
 import { DropdownMenuItem } from "../src/components/Dropdown";
 import { Input } from "../src/components/Input";
 import { Label } from "../src/components/Label";
-import { RadioCardGroup, RadioCardItem } from "../src/components/RadioCard";
+// import { RadioCardGroup, RadioCardItem } from "../src/components/RadioCard";
 import {
   Select,
   SelectContent,
@@ -117,62 +118,6 @@ export function ModalAddWorkspace({
                     </SelectContent>
                   </Select>
                 </div>
-                <div className="col-span-full">
-                  <Label htmlFor="database-region" className="font-medium">
-                    Database region
-                  </Label>
-                  <Select defaultValue="europe-west-01">
-                    <SelectTrigger
-                      id="database-region"
-                      name="database-region"
-                      className="mt-2"
-                    >
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="europe-west-01">
-                        europe-west-01
-                      </SelectItem>
-                      <SelectItem value="us-east-02">us-east-02</SelectItem>
-                      <SelectItem value="us-west-01">us-west-01</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <p className="mt-2 text-xs text-gray-500">
-                    For best performance, choose a region closest to your
-                    application.
-                  </p>
-                </div>
-              </div>
-              <div className="mt-4">
-                <Label htmlFor="database" className="font-medium">
-                  Database configuration
-                </Label>
-                <RadioCardGroup
-                  defaultValue={databases[0].value}
-                  className="mt-2 grid grid-cols-1 gap-4 text-sm md:grid-cols-2"
-                >
-                  {databases.map((database) => (
-                    <RadioCardItem key={database.value} value={database.value}>
-                      <div className="flex items-start gap-3">
-                        <div>
-                          {database.isRecommended ? (
-                            <div className="flex items-center gap-2">
-                              <span className="leading-5">
-                                {database.label}
-                              </span>
-                              <Badge>Recommended</Badge>
-                            </div>
-                          ) : (
-                            <span>{database.label}</span>
-                          )}
-                          <p className="mt-1 text-xs text-gray-500">
-                            1/8 vCPU, 1 GB RAM
-                          </p>
-                        </div>
-                      </div>
-                    </RadioCardItem>
-                  ))}
-                </RadioCardGroup>
               </div>
             </DialogHeader>
             <DialogFooter className="mt-6">
@@ -185,7 +130,11 @@ export function ModalAddWorkspace({
                 </Button>
               </DialogClose>
               <DialogClose asChild>
-                <Button type="submit" className="w-full sm:w-fit">
+                <Button
+                  type="submit"
+                  className="w-full sm:w-fit"
+                  disabled={true}
+                >
                   Add workspace
                 </Button>
               </DialogClose>

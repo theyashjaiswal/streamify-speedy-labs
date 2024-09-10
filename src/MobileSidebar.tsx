@@ -15,14 +15,13 @@ import {
   RiMenuLine,
   RiSettings5Line,
 } from "@remixicon/react";
-import { siteConfig } from "./siteConfig";
 
 const navigation = [
-  { name: "Overview", href: siteConfig.baseLinks.overview, icon: RiHome2Line },
-  { name: "Details", href: siteConfig.baseLinks.details, icon: RiListCheck },
+  { name: "Overview", href: "#", icon: RiHome2Line },
+  { name: "Details", href: "#", icon: RiListCheck },
   {
     name: "Settings",
-    href: siteConfig.baseLinks.settings,
+    href: "#",
     icon: RiSettings5Line,
   },
 ] as const;

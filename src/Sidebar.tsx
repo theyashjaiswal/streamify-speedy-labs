@@ -1,16 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // "use client";
-import { siteConfig } from "./siteConfig";
-// import { cx, focusRing } from "./lib/utils";
 import {
   RiHome2Line,
   RiLinkM,
   RiListCheck,
   RiSettings5Line,
 } from "@remixicon/react";
-// import Link from "next/link";
-// import { usePathname } from "next/navigation";
 import MobileSidebar from "./MobileSidebar";
 import {
   WorkspacesDropdownDesktop,
@@ -19,11 +15,11 @@ import {
 import { UserProfileMobile } from "./UserProfile";
 
 const navigation = [
-  { name: "Overview", href: siteConfig.baseLinks.overview, icon: RiHome2Line },
-  { name: "Details", href: siteConfig.baseLinks.details, icon: RiListCheck },
+  { name: "Overview", href: "#", icon: RiHome2Line },
+  { name: "Details", href: "#", icon: RiListCheck },
   {
     name: "Settings",
-    href: siteConfig.baseLinks.settings,
+    href: "#",
     icon: RiSettings5Line,
   },
 ] as const;

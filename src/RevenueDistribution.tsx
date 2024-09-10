@@ -127,23 +127,6 @@ export default function RevenueDistribution() {
         <h3 className="text-sm font-medium text-gray-900 dark:text-gray-50">
           Revenue Distribution
         </h3>
-        <div className="mt-2 flex flex-col w-44">
-          <Label htmlFor="revenueByYear" className="text-sm ">
-            Select Specific Year
-          </Label>
-          <SelectNative
-            id="revenueByYear"
-            value={selectedYear}
-            onChange={handleYearChange}
-            className="my-2 p-2 border rounded font-semibold"
-          >
-            {Object.keys(revenueData).map((year) => (
-              <option key={year} value={year}>
-                {year}
-              </option>
-            ))}
-          </SelectNative>
-        </div>
 
         <p className="mt-2 w-full text-center text-xl font-semibold text-gray-900 dark:text-gray-50">
           {formattedValue}
@@ -167,6 +150,24 @@ export default function RevenueDistribution() {
             return null;
           }}
         />
+        <div className="mt-2 flex flex-col w-44">
+          <Label htmlFor="revenueByYear" className="text-sm ">
+            Select Specific Year
+          </Label>
+          <SelectNative
+            id="revenueByYear"
+            value={selectedYear}
+            onChange={handleYearChange}
+            className="my-2 p-2 border rounded font-semibold"
+          >
+            {Object.keys(revenueData).map((year) => (
+              <option key={year} value={year}>
+                {year}
+              </option>
+            ))}
+          </SelectNative>
+        </div>
+
         <p className="mt-8 flex items-center justify-between text-xs text-gray-500 dark:text-gray-500">
           <span>Category</span>
           <span>Amount / Share</span>
